@@ -1,0 +1,8 @@
+[build-options]
+  observabilityIncluded = true
+
+[package]
+  distribution = "2201.3.1"
+  name = "greetingsservice0301"
+  org = "choreopdpe2edev"
+  version = "0.1.0"
