@@ -13,7 +13,7 @@ service / on new http:Listener(8090) {
 public function sayGreetings(string name, string apiKey) returns json|error {
     // Creates a new client with the Basic REST service URL.
     // https://webhook.site/aff29f66-fcd7-40d5-ab88-6bc9878cccf5
-    http:Client greetingClient = check new ("https://75a0c9ed-5a4c-43da-89ed-32bfa6e84033-dev.dev-us-east-azure.internal.choreo-st.choreoapis.dev", 
+    http:Client greetingClient = check new ("https://abf64c3b-258d-4746-8279-d6c5f63ea558-testenv01-gsqs-internal.dev-us-east-azure.choreo-dv.choreoapis.dev", 
         {
             secureSocket: { 
                 enable: false
@@ -25,7 +25,7 @@ public function sayGreetings(string name, string apiKey) returns json|error {
     map<string> additionalHeaders = {
         "API-Key" : apiKey
     };
-    json|error response = greetingClient->get(string `/inyy/greetingserviceinternal0302/1.0.0?name=${name}`, additionalHeaders);
+    json|error response = greetingClient->get(string `/gsqs/greetingsserviceinternal/1.0.0?name=${name}`, additionalHeaders);
     if response is error {
         io:println("GET request error:" + response.detail().toString());
     } else {
