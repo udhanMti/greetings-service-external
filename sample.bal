@@ -13,7 +13,7 @@ service / on new http:Listener(8090) {
 public function sayGreetings(string name, string apiKey) returns json|error {
     // Creates a new client with the Basic REST service URL.
     // https://webhook.site/aff29f66-fcd7-40d5-ab88-6bc9878cccf5
-    http:Client greetingClient = check new ("https://abf64c3b-258d-4746-8279-d6c5f63ea558-testenv01-gsqs-internal.dev-us-east-azure.choreo-dv.choreoapis.dev", 
+    http:Client greetingClient = check new ("https://abf64c3b-258d-4746-8279-d6c5f63ea558-testenv01-gsqs-internal.dev-us-east-azure.choreo-dv.choreoapis.internal", 
         {
             secureSocket: { 
                 enable: false
