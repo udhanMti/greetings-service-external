@@ -16,7 +16,7 @@ public function sayGreetings(string name, string apiKey) returns json|error {
     http:Client greetingClient = check new ("https://abf64c3b-258d-4746-8279-d6c5f63ea558-testenv01-gsqs-internal.dev-us-east-azure.choreo-dv.choreoapis.internal", 
         {
             secureSocket: { 
-                enable: false
+                enable: true
             }
         });
 
