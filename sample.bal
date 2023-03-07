@@ -12,12 +12,13 @@ service / on new http:Listener(8090) {
 
 public function sayGreetings(string name, string apiKey) returns json|error {
     // Creates a new client with the Basic REST service URL.
-    http:Client greetingClient = check new ("https://abf64c3b-258d-4746-8279-d6c5f63ea558-testenv01-gsqs-internal.dev-us-east-azure.internal.choreo-dv.choreoapis.dev", 
-        {
-            secureSocket: { 
-                enable: true
-            }
-        });
+    http:Client greetingClient = check new ("https://abf64c3b-258d-4746-8279-d6c5f63ea558-testenv01-gsqs-internal.dev-us-east-azure.internal.choreo-dv.choreoapis.dev");
+        // {
+        //     secureSocket: { 
+        //         enable: true
+        //     }
+        // }
+        
 
     // Sends a `GET` request to the "/albums" resource.
     // The verb is not mandatory as it is default to "GET".
