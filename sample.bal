@@ -12,7 +12,7 @@ service / on new http:Listener(8090) {
 
 public function sayGreetings(string name, string apiKey) returns json|error {
     // Creates a new client with the Basic REST service URL.
-    http:Client greetingClient = check new ("https://abf64c3b-258d-4746-8279-d6c5f63ea558-prod.prod-us-east-azure.internal.choreo-dv.choreoapis.dev");
+    http:Client greetingClient = check new ("https://abf64c3b-258d-4746-8279-d6c5f63ea558-testenv01-gsqs-internal.dev-us-east-azure.internal.choreo-dv.choreoapis.dev");
         // {
         //     secureSocket: { 
         //         enable: true
