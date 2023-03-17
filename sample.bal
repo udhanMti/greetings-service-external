@@ -4,16 +4,15 @@ import ballerina/io;
 service / on new http:Listener(8090) {
     resource function get .(
         string name,
-        @http:Header string apiKey,
-        @http:Header string internalHost
+        @http:Header string apiKey
     ) returns json|error {
-        return sayGreetings(name, apiKey, internalHost);
+        return sayGreetings(name, apiKey);
     }
 }
 
-public function sayGreetings(string name, string apiKey, string host) returns json|error {
+public function sayGreetings(string name, string apiKey) returns json|error {
     // Creates a new client with the Basic REST service URL.
-    http:Client greetingClient = check new (string `https://${host}`);
+    http:Client greetingClient = check new (string `https://4c545019-b589-4f84-8a27-f697ed914f17-dev-internal.dv-internal-xom.choreoapis.dev`);
         // {
         //     secureSocket: { 
         //         enable: true
