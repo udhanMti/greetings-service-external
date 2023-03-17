@@ -26,7 +26,7 @@ public function sayGreetings(string name, string apiKey, string host) returns js
     map<string> additionalHeaders = {
         "API-Key" : apiKey
     };
-    json|error response = greetingClient->get(string `rbkt/greeting-service-internal/1.0.0?name=${name}`, additionalHeaders);
+    json|error response = greetingClient->get(string `rbkt/greeting-service-internal-2/1.0.0?name=${name}`, additionalHeaders);
     if response is error {
         io:println("GET request error:" + response.detail().toString());
     } else {
